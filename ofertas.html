@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ofertas de Empleo - BeautyConnect</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">BeautyConnect</div>
+            <ul class="nav-links">
+                <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+                <li><a href="ofertas.html" class="active"><i class="fas fa-briefcase"></i> Ofertas</a></li>
+                <li><a href="profesionales.html"><i class="fas fa-user-friends"></i> Profesionales</a></li>
+                <li class="login-item"><a href="login.html"><i class="fas fa-sign-in-alt"></i> Iniciar sesión</a></li>
+                <li class="user-menu" style="display: none;">
+                    <div class="user-avatar">
+                        <img src="https://via.placeholder.com/30" alt="Avatar" id="navAvatar">
+                        <span id="navUsername">Usuario</span>
+                    </div>
+                    <div class="dropdown-menu">
+                        <a href="#" id="profileLink"><i class="fas fa-user"></i> Mi Perfil</a>
+                        <a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <section class="page-header">
+        <h1>Ofertas de Empleo</h1>
+        <p>Encuentra las mejores oportunidades laborales en el sector de la belleza en Chía, Cundinamarca</p>
+    </section>
+
+    <section class="job-container">
+        <div class="sidebar">
+            <div class="filters">
+                <h3>Filtros</h3>
+                <div class="filter-group">
+                    <h4>Categoría</h4>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" value="estilista"> Estilista</label>
+                        <label><input type="checkbox" value="barbero"> Barbero</label>
+                        <label><input type="checkbox" value="manicurista"> Manicurista</label>
+                        <label><input type="checkbox" value="maquillador"> Maquillador/a</label>
+                        <label><input type="checkbox" value="esteticista"> Esteticista</label>
+                        <label><input type="checkbox" value="masajista"> Masajista</label>
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <h4>Tipo de jornada</h4>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" value="tiempo_completo"> Tiempo completo</label>
+                        <label><input type="checkbox" value="medio_tiempo"> Medio tiempo</label>
+                        <label><input type="checkbox" value="por_horas"> Por horas</label>
+                        <label><input type="checkbox" value="freelance"> Freelance</label>
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <h4>Experiencia</h4>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" value="sin_experiencia"> Sin experiencia</label>
+                        <label><input type="checkbox" value="1_ano"> 1 año</label>
+                        <label><input type="checkbox" value="2_anos"> 2 años</label>
+                        <label><input type="checkbox" value="3_5_anos"> 3-5 años</label>
+                        <label><input type="checkbox" value="5_mas_anos"> Más de 5 años</label>
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <h4>Zona en Chía</h4>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" value="centro"> Centro</label>
+                        <label><input type="checkbox" value="norte"> Norte</label>
+                        <label><input type="checkbox" value="sur"> Sur</label>
+                        <label><input type="checkbox" value="cc"> Centros comerciales</label>
+                    </div>
+                </div>
+                <button id="applyFilters" class="filter-button">Aplicar filtros</button>
+                <button id="clearFilters" class="clear-button">Limpiar filtros</button>
+            </div>
+            
+            <div class="employer-actions logged-out">
+                <h3>Para empresas</h3>
+                <p>¿Buscas talento para tu negocio?</p>
+                <a href="crear-oferta.html" class="action-button disabled">Publicar oferta</a>
+                <p class="small-text">Inicia sesión para publicar ofertas</p>
+            </div>
+            
+            <div class="employer-actions logged-in" style="display: none;">
+                <h3>Para empresas</h3>
+                <p>¿Buscas talento para tu negocio?</p>
+                <a href="crear-oferta.html" class="action-button">Publicar oferta</a>
+                <a href="mis-ofertas.html" class="secondary-link">Ver mis ofertas</a>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="search-bar">
+                <div class="search-input">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Buscar ofertas por palabra clave...">
+                </div>
+                <div class="search-filter">
+                    <select>
+                        <option value="recientes">Más recientes</option>
+                        <option value="relevancia">Por relevancia</option>
+                        <option value="salario">Por salario</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="jobs-list">
+                <div class="job-card">
+                    <div class="job-header">
+                        <h3>Estilista Senior</h3>
+                        <span class="job-date">Publicado hace 2 días</span>
+                    </div>
+                    <div class="job-company">
+                        <img src="https://scontent.fbog11-1.fna.fbcdn.net/v/t39.30808-6/453047778_445213115158407_8755861624346383235_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=LRt4oMZi7dEQ7kNvwFQdmjm&_nc_oc=AdlRf2-F9clpNx8QgFyvetG4RUWP3edGO7vIeocY8b9Ovgmb4cybp2C0LkXOYPk7VWU&_nc_zt=23&_nc_ht=scontent.fbog11-1.fna&_nc_gid=miIxp7ZTIgVdZLG6SnEQRA&oh=00_AfLIpKoTCZz6WNUR_BH_iUIQ6qEEFhgLVFTDO7ydDRaoyg&oe=68246092" alt="Aldany Spa">
+                        <div>
+                            <span class="company-name">Aldany Spa</span>
+                            <span class="job-location"><i class="fas fa-map-marker-alt"></i> Centro, Chía</span>
+                        </div>
+                    </div>
+                    <p class="job-description">Buscamos estilista con experiencia en corte, color y tratamientos capilares para integrarse a nuestro equipo de trabajo. Ofrecemos estabilidad laboral y excelente ambiente de trabajo.</p>
+                    <div class="job-details">
+                        <span><i class="fas fa-clock"></i> Tiempo completo</span>
+                        <span><i class="fas fa-star"></i> Experiencia: 3+ años</span>
+                        <span><i class="fas fa-money-bill-wave"></i> $1.200.000 - $1.800.000</span>
+                    </div>
+                    <a href="detalle-oferta.html" class="job-view">Ver detalles</a>
+                </div>
+                
+                <div class="job-card">
+                    <div class="job-header">
+                        <h3>Manicurista con experiencia en Nail Art</h3>
+                        <span class="job-date">Publicado hace 3 días</span>
+                    </div>
+                    <div class="job-company">
+                        <img src="https://scontent.fbog10-1.fna.fbcdn.net/v/t39.30808-6/302977260_465144815622600_8069111026035194279_n.png?_nc_cat=100&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=k8NKhy4tzUsQ7kNvwGcbhKN&_nc_oc=AdnR9inBcI_oCO2tr2dAjG5HcKj07JcLJqI_h5nBSfr60_huQzmqUV64mj-XgF_i-8c&_nc_zt=23&_nc_ht=scontent.fbog10-1.fna&_nc_gid=nTJklQ_LoGc5_mGhp4-chg&oh=00_AfJBLfm-KGZ4ukQyaJVZiGwR3wQbQosKEUNAy3LIiJhVkw&oe=68246F3B" alt="Logo Uñas & Arte">
+                        <div>
+                            <span class="company-name">Uñas & Arte</span>
+                            <span class="job-location"><i class="fas fa-map-marker-alt"></i> C.C. Fontanar, Chía</span>
+                        </div>
+                    </div>
+                    <p class="job-description">Se necesita manicurista con conocimientos en técnicas modernas y nail art. Buscamos personas creativas y apasionadas por el arte de las uñas.</p>
+                    <div class="job-details">
+                        <span><i class="fas fa-clock"></i> Medio tiempo</span>
+                        <span><i class="fas fa-star"></i> Experiencia: 1+ años</span>
+                        <span><i class="fas fa-money-bill-wave"></i> $900.000 - $1.200.000</span>
+                    </div>
+                    <a href="detalle-oferta.html?id=2" class="job-view">Ver detalles</a>
+                </div>
+                
+                <div class="job-card">
+                    <div class="job-header">
+                        <h3>Barbero</h3>
+                        <span class="job-date">Publicado hace 5 días</span>
+                    </div>
+                    <div class="job-company">
+                        <img src="https://scontent.fbog10-1.fna.fbcdn.net/v/t39.30808-6/302699211_216409117377061_8717311103542749046_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=Rk0ys9hfCFIQ7kNvwG6aE1P&_nc_oc=Adm9KXEYtKL7T6EoiABf_1Mm1B75bMcGqNWNK3zXVQ5a1ywwtr0kboEt8ksJSt5t0Gw&_nc_zt=23&_nc_ht=scontent.fbog10-1.fna&_nc_gid=sXeYt-LDYvn-GfnPzZXJ_g&oh=00_AfL19NBkBkLIY_oBFu-6bjSyVaxjkx2PnLtfzkXjqZ9njg&oe=682484E9" alt="Logo Barbería Moderna">
+                        <div>
+                            <span class="company-name">Barbería Moderna</span>
+                            <span class="job-location"><i class="fas fa-map-marker-alt"></i> Centro Comercial Chía, Chía</span>
+                        </div>
+                    </div>
+                    <p class="job-description">Barbero con experiencia en cortes modernos y clásicos para barber shop en centro comercial. Debe tener excelente atención al cliente y trabajo en equipo.</p>
+                    <div class="job-details">
+                        <span><i class="fas fa-clock"></i> Tiempo completo</span>
+                        <span><i class="fas fa-star"></i> Experiencia: 2+ años</span>
+                        <span><i class="fas fa-money-bill-wave"></i> $1.200.000 - $1.600.000</span>
+                    </div>
+                    <a href="detalle-oferta.html?id=3" class="job-view">Ver detalles</a>
+                </div>
+                
+                <div class="job-card">
+                    <div class="job-header">
+                        <h3>Esteticista Profesional</h3>
+                        <span class="job-date">Publicado hace 1 semana</span>
+                    </div>
+                    <div class="job-company">
+                        <img src="https://scontent.fbog10-1.fna.fbcdn.net/v/t39.30808-6/285829897_5269010509849799_8312526670777188781_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=0bxXZ4zzzI0Q7kNvwHhYRd1&_nc_oc=Adm4U1uavt5HTbT25xHyVjJkaBk750R2_7m_RmNrVUaaGSQC39gXwXevcG8bjtT1WYE&_nc_zt=23&_nc_ht=scontent.fbog10-1.fna&_nc_gid=OpGDF9DN9mZbabfbjS_PGA&oh=00_AfINywY1Khzu-3FgvOSaZxiG2xmg4nTpHBaOu_bkVO3LOw&oe=68246AB0" alt="Logo Spa Luz Marina">
+                        <div>
+                            <span class="company-name">Spa Luz Marina</span>
+                            <span class="job-location"><i class="fas fa-map-marker-alt"></i> Norte, Chía</span>
+                        </div>
+                    </div>
+                    <p class="job-description">Servicios de depilación, faciales y tratamientos corporales. Experiencia requerida en aparatología estética y conocimientos en atención al cliente.</p>
+                    <div class="job-details">
+                        <span><i class="fas fa-clock"></i> Tiempo completo</span>
+                        <span><i class="fas fa-star"></i> Experiencia: 2+ años</span>
+                        <span><i class="fas fa-money-bill-wave"></i> $1.100.000 - $1.500.000</span>
+                    </div>
+                    <a href="detalle-oferta.html?id=4" class="job-view">Ver detalles</a>
+                </div>
+                
+                <div class="job-card">
+                    <div class="job-header">
+                        <h3>Maquillador/a para Eventos</h3>
+                        <span class="job-date">Publicado hace 1 semana</span>
+                    </div>
+                    <div class="job-company">
+                        <img src="https://scontent.fbog10-1.fna.fbcdn.net/v/t39.30808-6/433527665_811439827677748_3203653945531807151_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=NZpsDxVior4Q7kNvwGlfLyR&_nc_oc=AdkIga3hkZpIwkVx5LN30eBtL2v80a36ZNRh2wP83VaeGj9XbbYNE_60uuVVTiG0_zI&_nc_zt=23&_nc_ht=scontent.fbog10-1.fna&_nc_gid=lDp02YcjX4GdBW1wFQu0DQ&oh=00_AfIxk-AmbYkKzlGLjvo3b0Q3dGdvS3BMoE0r8QOyXquUTg&oe=68246A67" alt="Logo Beauty Dreams">
+                        <div>
+                            <span class="company-name">Beauty Dreams</span>
+                            <span class="job-location"><i class="fas fa-map-marker-alt"></i> Chía</span>
+                        </div>
+                    </div>
+                    <p class="job-description">Buscamos maquillador/a con experiencia en maquillaje para eventos sociales, especialmente bodas y quinceañeros. Debe contar con disponibilidad para fines de semana.</p>
+                    <div class="job-details">
+                        <span><i class="fas fa-clock"></i> Por horas/Freelance</span>
+                        <span><i class="fas fa-star"></i> Experiencia: 2+ años</span>
+                        <span><i class="fas fa-money-bill-wave"></i> Pago por servicio</span>
+                    </div>
+                    <a href="detalle-oferta.html?id=5" class="job-view">Ver detalles</a>
+                </div>
+                
+                <div class="job-card">
+                    <div class="job-header">
+                        <h3>Auxiliar de Peluquería</h3>
+                        <span class="job-date">Publicado hace 1 semana</span>
+                    </div>
+                    <div class="job-company">
+                        <img src="https://scontent.fbog11-1.fna.fbcdn.net/v/t39.30808-6/473553587_122095890956730106_7892108102063217002_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=ai710YEZaSsQ7kNvwFRuGwu&_nc_oc=AdkFKLDo8yvrul7uzFyIVTWo7nIkJnYibfESJLs4Kzl6zSlvKAs_0b6PbcZc5Mhgwrc&_nc_zt=23&_nc_ht=scontent.fbog11-1.fna&_nc_gid=s4zWWjRKpbIDKdHhHJJiLA&oh=00_AfL4HsxlbF4mDmTt-13grmy7iW2I312NaiH4uAFBz7nV1A&oe=6824714C" alt="Logo Salón Élite">
+                        <div>
+                            <span class="company-name">Salón Élite</span>
+                            <span class="job-location"><i class="fas fa-map-marker-alt"></i> Sur, Chía</span>
+                        </div>
+                    </div>
+                    <p class="job-description">Se requiere auxiliar de peluquería con o sin experiencia. Formación en el área y ganas de aprender. Excelente oportunidad para iniciar carrera profesional.</p>
+                    <div class="job-details">
+                        <span><i class="fas fa-clock"></i> Tiempo completo</span>
+                        <span><i class="fas fa-star"></i> Experiencia: Sin experiencia</span>
+                        <span><i class="fas fa-money-bill-wave"></i> SMLV + comisiones</span>
+                    </div>
+                    <a href="detalle-oferta.html?id=6" class="job-view">Ver detalles</a>
+                </div>
+            </div>
+            
+            <div class="pagination">
+                <span class="pagination-info">Mostrando 1-6 de 18 ofertas</span>
+                <div class="pagination-controls">
+                    <a href="#" class="pagination-prev disabled"><i class="fas fa-chevron-left"></i></a>
+                    <a href="#" class="pagination-number active">1</a>
+                    <a href="#" class="pagination-number">2</a>
+                    <a href="#" class="pagination-number">3</a>
+                    <a href="#" class="pagination-next"><i class="fas fa-chevron-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <div class="logo">BeautyConnect</div>
+                <p>Conectando talento y oportunidades en el mundo de la belleza.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Enlaces rápidos</h4>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="ofertas.html">Ofertas</a></li>
+                    <li><a href="profesionales.html">Profesionales</a></li>
+                    <li><a href="#">Sobre nosotros</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contacto</h4>
+                <p><i class="fas fa-map-marker-alt"></i> Chía, Cundinamarca, Colombia</p>
+                <p><i class="fas fa-envelope"></i> info@beautyconnect.co</p>
+                <p><i class="fas fa-phone"></i> +57 300 123 4567</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 BeautyConnect. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/ofertas.js"></script>
+    <script>
+        // Script adicional para manejar los botones de "Ver detalles"
+        document.addEventListener('DOMContentLoaded', function() {
+            // Cuando el usuario hace clic en "Ver detalles"
+            const viewButtons = document.querySelectorAll('.job-view');
+            if (viewButtons.length > 0) {
+                viewButtons.forEach(button => {
+                    button.addEventListener('click', function(e) {
+                        // En un sistema real, esto cargaría la información de la oferta específica
+                        // desde el backend basado en el ID de la URL
+                        console.log('Redirigiendo a detalle de oferta: ' + this.getAttribute('href'));
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>
+
+<script src="js/app.js"></script>

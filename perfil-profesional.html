@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil Profesional - BeautyConnect</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Estilos específicos para solucionar problemas de visualización */
+        .profile-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+        
+        .profile-header {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+        
+        .profile-cover {
+            height: 200px;
+            background: linear-gradient(135deg, #ffe3ec, #fff0f5);
+            position: relative;
+        }
+        
+        .profile-status {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            padding: 0.35rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+        
+        .profile-status.available {
+            background-color: rgba(50, 205, 50, 0.2);
+            color: #32cd32;
+        }
+        
+        .profile-main {
+            display: flex;
+            padding: 0 2rem 2rem;
+            position: relative;
+            margin-top: -75px;
+        }
+        
+        .profile-avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid white;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-right: 2rem;
+            flex-shrink: 0;
+            background-color: white;
+        }
+        
+        .profile-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .profile-info {
+            flex-grow: 1;
+            padding-top: 25px;
+        }
+        
+        .profile-info h1 {
+            font-size: 2rem;
+            margin-bottom: 0.25rem;
+        }
+        
+        .profile-title {
+            color: #ff69b4;
+            font-weight: 600;
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .profile-location {
+            font-size: 0.875rem;
+            margin-bottom: 1.5rem;
+            color: #666;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .profile-stats {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #ff69b4;
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 0.875rem;
+            color: #666;
+        }
+        
+        .profile-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .profile-content {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .profile-main-content {
+            flex: 2;
+        }
+        
+        .profile-sidebar {
+            flex: 1;
+        }
+        
+        .profile-section {
+            background-color: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .profile-section h2 {
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            color: #333;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 0.75rem;
+        }
+        
+        /* Correcciones específicas para la vista móvil */
+        @media (max-width: 1024px) {
+            .profile-content {
+                flex-direction: column;
+            }
+            
+            .profile-main-content {
+                order: 2;
+            }
+            
+            .profile-sidebar {
+                order: 1;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .profile-main {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                padding-bottom: 1rem;
+            }
+            
+            .profile-avatar {
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+            
+            .profile-info {
+                padding-top: 0;
+            }
+            
+            .profile-stats {
+                justify-content: center;
+            }
+            
+            .profile-actions {
+                justify-content: center;
+            }
+            
+            .portfolio-gallery {
+                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            }
+            
+            .portfolio-item {
+                height: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">BeautyConnect</div>
+            <ul class="nav-links">
+                <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+                <li><a href="ofertas.html"><i class="fas fa-briefcase"></i> Ofertas</a></li>
+                <li><a href="profesionales.html" class="active"><i class="fas fa-user-friends"></i> Profesionales</a></li>
+                <li class="login-item"><a href="login.html"><i class="fas fa-sign-in-alt"></i> Iniciar sesión</a></li>
+                <li class="user-menu" style="display: none;">
+                    <div class="user-avatar">
+                        <img src="https://scontent.fbog10-1.fna.fbcdn.net/v/t39.30808-6/465750763_10223125987372747_2103974041204247960_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=833d8c&_nc_ohc=DCy0v3cqi5wQ7kNvwH6PtXm&_nc_oc=AdleHefnEHhzb0YuXCnVY-PQuWkcdhnkDpjHEECrXVziI8urBRmHDQqoOx8i11rtAhw&_nc_zt=23&_nc_ht=scontent.fbog10-1.fna&_nc_gid=taLaeynTDm8Jw0a6BSkxOw&oh=00_AfJnh3lDsPD20LTnspSBQgnDqUE39M8T8nh1rnu6OAAfqw&oe=68246160" alt="Avatar" id="navAvatar">
+                        <span id="navUsername">Paulina Lopez</span>
+                    </div>
+                    <div class="dropdown-menu">
+                        <a href="#" id="profileLink"><i class="fas fa-user"></i> Mi Perfil</a>
+                        <a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <section class="profile-container">
+        <div class="profile-header">
+            <div class="profile-cover">
+                <div class="profile-status available">
+                    <i class="fas fa-circle"></i> Disponible para ofertas
+                </div>
+            </div>
+            
+            <div class="profile-main">
+                <div class="profile-avatar">
+                    <img src="https://scontent.fbog10-1.fna.fbcdn.net/v/t39.30808-6/465750763_10223125987372747_2103974041204247960_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=833d8c&_nc_ohc=DCy0v3cqi5wQ7kNvwH6PtXm&_nc_oc=AdleHefnEHhzb0YuXCnVY-PQuWkcdhnkDpjHEECrXVziI8urBRmHDQqoOx8i11rtAhw&_nc_zt=23&_nc_ht=scontent.fbog10-1.fna&_nc_gid=taLaeynTDm8Jw0a6BSkxOw&oh=00_AfJnh3lDsPD20LTnspSBQgnDqUE39M8T8nh1rnu6OAAfqw&oe=68246160" alt="Paulina">
+                </div>
+                
+                <div class="profile-info">
+                    <h1>Paulina Lopez</h1>
+                    <p class="profile-title">Estilista Senior</p>
+                    <p class="profile-location"><i class="fas fa-map-marker-alt"></i> Centro, Chía, Cundinamarca</p>
+                    
+                    <div class="profile-stats">
+                        <div class="stat">
+                            <span class="stat-value">10</span>
+                            <span class="stat-label">Años de experiencia</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">25</span>
+                            <span class="stat-label">Proyectos</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">15</span>
+                            <span class="stat-label">Recomendaciones</span>
+                        </div>
+                    </div>
+                    
+                    <div class="profile-actions">
+                        <a href="#" class="primary-button" id="contactBtn"><i class="fas fa-envelope"></i> Contactar</a>
+                        <a href="#" class="secondary-button" id="saveProfileBtn"><i class="fas fa-star"></i> Guardar perfil</a>
+                        <a href="#" class="icon-button" id="shareProfileBtn"><i class="fas fa-share-alt"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="profile-content">
+            <div class="profile-main-content">
+                <section class="profile-section">
+                    <h2>Acerca de mí</h2>
+                    <p>Soy una estilista con más de 10 años de experiencia en salones de lujo. Me especializo en técnicas de color avanzadas, cortes personalizados y tratamientos capilares. He trabajado con clientes de alto perfil y he participado en eventos de moda y belleza en Colombia.</p>
+                    <p>Mi objetivo es brindar un servicio personalizado a cada cliente, entendiendo sus necesidades y realzando su belleza natural. Me mantengo actualizada con las últimas tendencias y técnicas del mundo de la belleza a través de cursos y certificaciones internacionales.</p>
+                </section>
+                
+                <section class="profile-section">
+                    <h2>Especialidades</h2>
+                    <div class="skills-container">
+                        <div class="skill-tag"><i class="fas fa-check-circle"></i> Corte de cabello</div>
+                        <div class="skill-tag"><i class="fas fa-check-circle"></i> Colorimetría</div>
+                        <div class="skill-tag"><i class="fas fa-check-circle"></i> Balayage</div>
+                        <div class="skill-tag"><i class="fas fa-check-circle"></i> Mechas</div>
+                        <div class="skill-tag"><i class="fas fa-check-circle"></i> Tratamientos capilares</div>
+                        <div class="skill-tag"><i class="fas fa-check-circle"></i> Peinados de evento</div>
+                        <div class="skill-tag"><i class="fas fa-check-circle"></i> Recogidos</div>
+                        <div class="skill-tag"><i class="fas fa-check-circle"></i> Asesoría de imagen</div>
+                    </div>
+                </section>
+                
+                <section class="profile-section">
+                    <h2>Experiencia laboral</h2>
+                    <div class="experience-list">
+                        <div class="experience-item">
+                            <div class="experience-header">
+                                <div class="experience-title">
+                                    <h3>Estilista</h3>
+                                    <p class="company">Salón Belleza Total - Chía</p>
+                                </div>
+                                <div class="experience-date">
+                                    <span>2021 - Presente</span>
+                                </div>
+                            </div>
+                            <p class="experience-description">Encargada de servicios de corte, color y peinado. Responsable de asesorar a clientes en tratamientos capilares y coordinar al equipo de estilistas junior.</p>
+                        </div>
+                        
+                        <div class="experience-item">
+                            <div class="experience-header">
+                                <div class="experience-title">
+                                    <h3>Colorista</h3>
+                                    <p class="company">Studio Hair - Bogotá</p>
+                                </div>
+                                <div class="experience-date">
+                                    <span>2018 - 2021</span>
+                                </div>
+                            </div>
+                            <p class="experience-description">Especialista en técnicas de color, mechas y balayage. Participación en eventos de moda y belleza como colorista principal.</p>
+                        </div>
+                        
+                        <div class="experience-item">
+                            <div class="experience-header">
+                                <div class="experience-title">
+                                    <h3>Estilista</h3>
+                                    <p class="company">Beauty Salon - Bogotá</p>
+                                </div>
+                                <div class="experience-date">
+                                    <span>2015 - 2018</span>
+                                </div>
+                            </div>
+                            <p class="experience-description">Servicios de corte, peinado y coloración básica. Atención personalizada a clientes y manejo de agenda.</p>
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="profile-section">
+                    <h2>Formación</h2>
+                    <div class="education-list">
+                        <div class="education-item">
+                            <div class="education-header">
+                                <div class="education-title">
+                                    <h3>Técnico en Estilismo y Dirección de Peluquería</h3>
+                                    <p class="institution">Academia Internacional de Estilismo - Bogotá</p>
+                                </div>
+                                <div class="education-date">
+                                    <span>2014 - 2015</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="education-item">
+                            <div class="education-header">
+                                <div class="education-title">
+                                    <h3>Certificación en Técnicas Avanzadas de Color</h3>
+                                    <p class="institution">L'Oréal Professional</p>
+                                </div>
+                                <div class="education-date">
+                                    <span>2018</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="education-item">
+                            <div class="education-header">
+                                <div class="education-title">
+                                    <h3>Masterclass en Balayage y Mechas</h3>
+                                    <p class="institution">Wella Professionals</p>
+                                </div>
+                                <div class="education-date">
+                                    <span>2020</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="profile-section">
+                    <h2>Portafolio</h2>
+                    <div class="portfolio-gallery">
+                        <div class="portfolio-item">
+                            <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?w=500&auto=format&fit=crop&q=60" alt="Trabajo 1">
+                        </div>
+                        <div class="portfolio-item">
+                            <img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=500&auto=format&fit=crop&q=60" alt="Trabajo 2">
+                        </div>
+                        <div class="portfolio-item">
+                            <img src="https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=500&auto=format&fit=crop&q=60" alt="Trabajo 4">
+                        </div>
+                        <div class="portfolio-item">
+                            <img src="https://images.unsplash.com/photo-1560869713-7d0a29430803?w=500&auto=format&fit=crop&q=60" alt="Trabajo 5">
+                        </div>
+                        <div class="portfolio-item">
+                            <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=500&auto=format&fit=crop&q=60" alt="Trabajo 6">
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="profile-section">
+                    <h2>Recomendaciones</h2>
+                    <div class="recommendations-list">
+                        <div class="recommendation-item">
+                            <div class="recommendation-header">
+                                <div class="recommendation-avatar">
+                                    <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Ana Martínez">
+                                </div>
+                                <div class="recommendation-author">
+                                    <h4>Valentina Aldana</h4>
+                                    <p>Gerente de Aldany Spa</p>
+                                </div>
+                            </div>
+                            <p class="recommendation-text">"Paulina es una excelente profesional con amplio conocimiento en colorimetría. Su atención al detalle y su capacidad para entender las necesidades de cada cliente la hacen una estilista excepcional. Ha sido un pilar fundamental en nuestro equipo desde que se unió."</p>
+                        </div>
+                        
+                        <div class="recommendation-item">
+                            <div class="recommendation-header">
+                                <div class="recommendation-avatar">
+                                    <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Carla Ruiz">
+                                </div>
+                                <div class="recommendation-author">
+                                    <h4>Carla Ruiz</h4>
+                                    <p>Cliente</p>
+                                </div>
+                            </div>
+                            <p class="recommendation-text">"He sido cliente de Pau por más de 3 años y no cambiaría su servicio por nada. Entiende perfectamente mi tipo de cabello y siempre me sorprende con resultados que superan mis expectativas. La recomiendo ampliamente."</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            
+            <div class="profile-sidebar">
+                <div class="sidebar-card">
+                    <h3>Información de contacto</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-envelope"></i> Contactar por plataforma</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Centro, Chía, Cundinamarca</li>
+                    </ul>
+                </div>
+                
+                <div class="sidebar-card">
+                    <h3>Disponibilidad</h3>
+                    <p><i class="fas fa-check-circle"></i> Disponible para ofertas laborales</p>
+                    <div class="availability-details">
+                        <p><strong>Tipo de empleo:</strong></p>
+                        <ul>
+                            <li>Tiempo completo</li>
+                            <li>Medio tiempo</li>
+                        </ul>
+                        <p><strong>Horario preferido:</strong></p>
+                        <p>Lunes a Sábado, diurno</p>
+                    </div>
+                </div>
+                
+                <div class="sidebar-card">
+                    <h3>Idiomas</h3>
+                    <ul class="languages-list">
+                        <li>
+                            <span class="language">Español</span>
+                            <div class="language-level">
+                                <div class="level-bar full"></div>
+                                <div class="level-bar full"></div>
+                                <div class="level-bar full"></div>
+                                <div class="level-bar full"></div>
+                                <div class="level-bar full"></div>
+                            </div>
+                            <span class="level-text">Nativo</span>
+                        </li>
+                        <li>
+                            <span class="language">Inglés</span>
+                            <div class="language-level">
+                                <div class="level-bar full"></div>
+                                <div class="level-bar full"></div>
+                                <div class="level-bar"></div>
+                                <div class="level-bar"></div>
+                                <div class="level-bar"></div>
+                            </div>
+                            <span class="level-text">Intermedio</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="sidebar-card">
+                    <h3>Servicios</h3>
+                    <ul class="services-list">
+                        <li><span class="service-name">Corte de cabello mujer</span> <span class="service-price">$50.000 - $70.000</span></li>
+                        <li><span class="service-name">Corte de cabello hombre</span> <span class="service-price">$35.000 - $50.000</span></li>
+                        <li><span class="service-name">Tinte completo</span> <span class="service-price">$120.000 - $180.000</span></li>
+                        <li><span class="service-name">Balayage</span> <span class="service-price">$200.000 - $350.000</span></li>
+                        <li><span class="service-name">Mechas/Reflejos</span> <span class="service-price">$150.000 - $250.000</span></li>
+                        <li><span class="service-name">Peinado para eventos</span> <span class="service-price">$80.000 - $150.000</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal para contactar profesional -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h2>Contactar a Paulina Lopez</h2>
+            <p>Completa el formulario para enviar un mensaje</p>
+            
+            <form id="contactForm">
+                <div class="form-group">
+                    <label>Nombre completo</label>
+                    <input type="text" required>
+                </div>
+                <div class="form-group">
+                    <label>Correo electrónico</label>
+                    <input type="email" required>
+                </div>
+                <div class="form-group">
+                    <label>Teléfono</label>
+                    <input type="tel" required>
+                </div>
+                <div class="form-group">
+                    <label>Empresa/Salón (opcional)</label>
+                    <input type="text">
+                </div>
+                <div class="form-group">
+                    <label>Asunto</label>
+                    <select required>
+                        <option value="" disabled selected>Selecciona una opción</option>
+                        <option value="oferta_empleo">Oferta de empleo</option>
+                        <option value="entrevista">Solicitud de entrevista</option>
+                        <option value="informacion">Solicitud de información</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Mensaje</label>
+                    <textarea rows="4" placeholder="Escribe tu mensaje..." required></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="checkbox-container">
+                        <input type="checkbox" required>
+                        <span>Acepto que BeautyConnect procese mis datos según la política de privacidad</span>
+                    </label>
+                </div>
+                <button type="submit" class="modal-button">Enviar mensaje</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <div class="logo">BeautyConnect</div>
+                <p>Conectando talento y oportunidades en el mundo de la belleza.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Enlaces rápidos</h4>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="ofertas.html">Ofertas</a></li>
+                    <li><a href="profesionales.html">Profesionales</a></li>
+                    <li><a href="#">Sobre nosotros</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contacto</h4>
+                <p><i class="fas fa-map-marker-alt"></i> Chía, Cundinamarca, Colombia</p>
+                <p><i class="fas fa-envelope"></i> info@beautyconnect.co</p>
+                <p><i class="fas fa-phone"></i> +57 300 123 4567</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 BeautyConnect. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/perfiles.js"></script>
+    <script>
+        // Script específico para esta página
+        document.addEventListener('DOMContentLoaded', function() {
+            // Configurar el modal de contacto
+            const contactBtn = document.getElementById('contactBtn');
+            if (contactBtn) {
+                contactBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.getElementById('contactModal').style.display = 'flex';
+                });
+            }
+            
+            // Cerrar modal
+            const closeModal = document.querySelector('.modal-close');
+            if (closeModal) {
+                closeModal.addEventListener('click', function() {
+                    document.getElementById('contactModal').style.display = 'none';
+                });
+            }
+            
+            // Cerrar modal al hacer clic fuera
+            window.addEventListener('click', function(e) {
+                const modal = document.getElementById('contactModal');
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+            
+            // Prevenir envío de formulario de contacto
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    alert('Mensaje enviado exitosamente.');
+                    document.getElementById('contactModal').style.display = 'none';
+                });
+            }
+            
+            // Configurar portafolio con lightbox
+            const portfolioItems = document.querySelectorAll('.portfolio-item');
+            if (portfolioItems.length > 0) {
+                portfolioItems.forEach(item => {
+                    item.addEventListener('click', function() {
+                        const imgSrc = this.querySelector('img').src;
+                        showLightbox(imgSrc);
+                    });
+                });
+            }
+            
+            // Función para mostrar imágenes en lightbox
+            function showLightbox(imageSrc) {
+                let lightbox = document.getElementById('portfolio-lightbox');
+                
+                if (!lightbox) {
+                    lightbox = document.createElement('div');
+                    lightbox.id = 'portfolio-lightbox';
+                    lightbox.style.position = 'fixed';
+                    lightbox.style.top = '0';
+                    lightbox.style.left = '0';
+                    lightbox.style.width = '100%';
+                    lightbox.style.height = '100%';
+                    lightbox.style.backgroundColor = 'rgba(0,0,0,0.9)';
+                    lightbox.style.display = 'flex';
+                    lightbox.style.justifyContent = 'center';
+                    lightbox.style.alignItems = 'center';
+                    lightbox.style.zIndex = '9999';
+                    
+                    const closeBtn = document.createElement('span');
+                    closeBtn.innerHTML = '&times;';
+                    closeBtn.style.position = 'absolute';
+                    closeBtn.style.top = '20px';
+                    closeBtn.style.right = '30px';
+                    closeBtn.style.fontSize = '40px';
+                    closeBtn.style.color = 'white';
+                    closeBtn.style.cursor = 'pointer';
+                    
+                    closeBtn.addEventListener('click', function() {
+                        document.body.removeChild(lightbox);
+                    });
+                    
+                    lightbox.addEventListener('click', function(e) {
+                        if (e.target === lightbox) {
+                            document.body.removeChild(lightbox);
+                        }
+                    });
+                    
+                    lightbox.appendChild(closeBtn);
+                    document.body.appendChild(lightbox);
+                }
+                
+                // Limpiar contenido anterior
+                const existingImg = lightbox.querySelector('img');
+                if (existingImg) {
+                    lightbox.removeChild(existingImg);
+                }
+                
+                // Agregar nueva imagen
+                const img = document.createElement('img');
+                img.src = imageSrc;
+                img.style.maxWidth = '90%';
+                img.style.maxHeight = '80%';
+                img.style.objectFit = 'contain';
+                img.style.border = '5px solid white';
+                
+                lightbox.appendChild(img);
+                lightbox.style.display = 'flex';
+            }
+            
+            // Configurar botón de guardar perfil
+            const saveProfileBtn = document.getElementById('saveProfileBtn');
+            if (saveProfileBtn) {
+                saveProfileBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    alert('Perfil guardado como favorito');
+                    this.innerHTML = '<i class="fas fa-star"></i> Guardado';
+                    this.style.backgroundColor = 'rgba(255, 105, 180, 0.1)';
+                });
+            }
+            
+            // Configurar botón de compartir perfil
+            const shareProfileBtn = document.getElementById('shareProfileBtn');
+            if (shareProfileBtn) {
+                shareProfileBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    if (navigator.share) {
+                        navigator.share({
+                            title: 'Perfil de Paulina Lopez - BeautyConnect',
+                            text: 'Mira el perfil de esta profesional de belleza en BeautyConnect',
+                            url: window.location.href,
+                        });
+                    } else {
+                        prompt('Copia este enlace para compartir el perfil:', window.location.href);
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
+
+<script src="js/app.js"></script>

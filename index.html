@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BeautyConnect - Conectando profesionales de belleza</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">BeautyConnect</div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active"><i class="fas fa-home"></i> Inicio</a></li>
+                <li><a href="ofertas.html"><i class="fas fa-briefcase"></i> Ofertas</a></li>
+                <li><a href="profesionales.html"><i class="fas fa-user-friends"></i> Profesionales</a></li>
+                <li class="login-item"><a href="login.html"><i class="fas fa-sign-in-alt"></i> Iniciar sesión</a></li>
+                <li class="user-menu" style="display: none;">
+                    <div class="user-avatar">
+                        <img src="https://via.placeholder.com/30" alt="Avatar" id="navAvatar">
+                        <span id="navUsername">Usuario</span>
+                    </div>
+                    <div class="dropdown-menu">
+                        <a href="#" id="profileLink"><i class="fas fa-user"></i> Mi Perfil</a>
+                        <a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Conecta con tu futuro en la industria de la belleza</h1>
+            <p>La plataforma especializada para profesionales y empresas del sector belleza en Chía, Cundinamarca</p>
+            <div class="hero-buttons">
+                <a href="registro.html" class="cta-button"><i class="fas fa-user-plus"></i> Crear cuenta</a>
+                <a href="ofertas.html" class="secondary-button"><i class="fas fa-search"></i> Ver ofertas</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="feature-card">
+            <i class="fas fa-user-tie fa-3x"></i>
+            <h3>Para profesionales</h3>
+            <p>Crea tu perfil especializado, destaca tus habilidades y encuentra las mejores oportunidades laborales en Chía.</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-building fa-3x"></i>
+            <h3>Para empresas</h3>
+            <p>Publica ofertas de trabajo, encuentra talento calificado y gestiona tus procesos de selección fácilmente.</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-handshake fa-3x"></i>
+            <h3>Conexiones locales</h3>
+            <p>Red exclusiva de profesionales y establecimientos de belleza en Chía, Cundinamarca.</p>
+        </div>
+    </section>
+
+    <section class="professionals-section">
+        <div class="section-header">
+            <h2>Profesionales destacados</h2>
+            <a href="profesionales.html" class="view-all">Ver todos <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="professionals-grid">
+            <div class="profile-card">
+                <div class="profile-image">
+                    <img src="https://scontent.fbog10-1.fna.fbcdn.net/v/t39.30808-6/465750763_10223125987372747_2103974041204247960_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=833d8c&_nc_ohc=DCy0v3cqi5wQ7kNvwH6PtXm&_nc_oc=AdleHefnEHhzb0YuXCnVY-PQuWkcdhnkDpjHEECrXVziI8urBRmHDQqoOx8i11rtAhw&_nc_zt=23&_nc_ht=scontent.fbog10-1.fna&_nc_gid=taLaeynTDm8Jw0a6BSkxOw&oh=00_AfJnh3lDsPD20LTnspSBQgnDqUE39M8T8nh1rnu6OAAfqw&oe=68246160" alt="Paulina">
+                </div>
+                <div class="profile-info">
+                    <h3>Paulina Lopez</h3>
+                    <span class="profile-title">Estilista</span>
+                    <div class="profile-skills">
+                        <span>Corte</span>
+                        <span>Color</span>
+                        <span>Peinados</span>
+                    </div>
+                    <p>10 años de experiencia en salones de lujo. Especialista en técnicas de color avanzadas.</p>
+                    <a href="#" class="profile-contact">Ver perfil</a>
+                </div>
+            </div>
+            <div class="profile-card">
+                <div class="profile-image">
+                    <img src="https://scontent.fbog10-1.fna.fbcdn.net/v/t39.30808-6/490857957_122155274786391332_9141454795782317304_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=Axf1tPu1C8YQ7kNvwFMO91G&_nc_oc=AdnvrCvb6lduh-ckO18QiRJr8jBDSSMHHv0kXic_GznIiQxNN6EAIQUEl9A8uVWgTi8&_nc_zt=23&_nc_ht=scontent.fbog10-1.fna&_nc_gid=XqAXljJoQfo8xLbVfEtQiA&oh=00_AfKzWZCubhYzu1gZGtJbsVLYvZdHLdXruIeWd5m9weHtig&oe=68245974" alt="Carlos Jiménez">
+                </div>
+                <div class="profile-info">
+                    <h3>Luis David Velazco</h3>
+                    <span class="profile-title">Barbero Profesional</span>
+                    <div class="profile-skills">
+                        <span>Barba</span>
+                        <span>Fade</span>
+                        <span>Afeitado clásico</span>
+                    </div>
+                    <p>Maestro en cortes modernos y clásicos con técnicas precision.</p>
+                    <a href="#" class="profile-contact">Ver perfil</a>
+                </div>
+            </div>
+            <div class="profile-card">
+                <div class="profile-image">
+                    <img src="https://scontent.fbog10-1.fna.fbcdn.net/v/t39.30808-6/466620666_8714026111996589_6454453428815112741_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=kazbTTyrunYQ7kNvwGA4fHo&_nc_oc=AdmSrviEg9Qx4sloGL11Hc8u3k2Srb_89fuyi8XT9NVmTDk1bsD9dzOw8ilEHSYXHi4&_nc_zt=23&_nc_ht=scontent.fbog10-1.fna&_nc_gid=27TQXk7sZnLvoRJZrM77Sg&oh=00_AfJ5ClW0mKm38pUV-YZnOJEYk_puhiGpZPwAZpMXpDvgrQ&oe=68245334" alt="Jasbleidy">
+                </div>
+                <div class="profile-info">
+                    <h3>Jasbleidy Rojas</h3>
+                    <span class="profile-title">Especialista en Uñas</span>
+                    <div class="profile-skills">
+                        <span>Manicura</span>
+                        <span>Nail Art</span>
+                        <span>Acrílicas</span>
+                    </div>
+                    <p>Artista creativa especializada en diseños personalizados y técnicas innovadoras.</p>
+                    <a href="#" class="profile-contact">Ver perfil</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="jobs-section">
+        <div class="section-header">
+            <h2>Ofertas recientes</h2>
+            <a href="ofertas.html" class="view-all">Ver todas <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="jobs-grid">
+            <div class="job-card">
+                <h3>Estilista</h3>
+                <div class="job-company">
+                    <img src="https://scontent.fbog11-1.fna.fbcdn.net/v/t39.30808-6/453047778_445213115158407_8755861624346383235_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=LRt4oMZi7dEQ7kNvwFQdmjm&_nc_oc=AdlRf2-F9clpNx8QgFyvetG4RUWP3edGO7vIeocY8b9Ovgmb4cybp2C0LkXOYPk7VWU&_nc_zt=23&_nc_ht=scontent.fbog11-1.fna&_nc_gid=miIxp7ZTIgVdZLG6SnEQRA&oh=00_AfLIpKoTCZz6WNUR_BH_iUIQ6qEEFhgLVFTDO7ydDRaoyg&oe=68246092" alt="Logo Empresa">
+                    <span>Aldany Spa</span>
+                </div>
+                <p class="job-location"><i class="fas fa-map-marker-alt"></i> Chía, Cundinamarca</p>
+                <p class="job-description">Buscamos estilista con experiencia en corte, color y tratamientos capilares.</p>
+                <div class="job-tags">
+                    <span>Tiempo completo</span>
+                    <span>Experiencia: 2+ años</span>
+                </div>
+                <a href="#" class="job-apply">Ver detalles</a>
+            </div>
+            <div class="job-card">
+                <h3>Manicurista</h3>
+                <div class="job-company">
+                    <img src="https://scontent.fbog10-1.fna.fbcdn.net/v/t39.30808-6/302977260_465144815622600_8069111026035194279_n.png?_nc_cat=100&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=k8NKhy4tzUsQ7kNvwGcbhKN&_nc_oc=AdnR9inBcI_oCO2tr2dAjG5HcKj07JcLJqI_h5nBSfr60_huQzmqUV64mj-XgF_i-8c&_nc_zt=23&_nc_ht=scontent.fbog10-1.fna&_nc_gid=nTJklQ_LoGc5_mGhp4-chg&oh=00_AfJBLfm-KGZ4ukQyaJVZiGwR3wQbQosKEUNAy3LIiJhVkw&oe=68246F3B" alt="Logo Empresa">
+                    <span>Uñas & Arte</span>
+                </div>
+                <p class="job-location"><i class="fas fa-map-marker-alt"></i> Chía, Cundinamarca</p>
+                <p class="job-description">Se necesita manicurista con conocimientos en técnicas modernas.</p>
+                <div class="job-tags">
+                    <span>Medio tiempo</span>
+                    <span>Experiencia: 1+ años</span>
+                </div>
+                <a href="#" class="job-apply">Ver detalles</a>
+            </div>
+            <div class="job-card">
+                <h3>Barbero</h3>
+                <div class="job-company">
+                    <img src="https://scontent.fbog10-1.fna.fbcdn.net/v/t39.30808-6/302699211_216409117377061_8717311103542749046_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=Rk0ys9hfCFIQ7kNvwG6aE1P&_nc_oc=Adm9KXEYtKL7T6EoiABf_1Mm1B75bMcGqNWNK3zXVQ5a1ywwtr0kboEt8ksJSt5t0Gw&_nc_zt=23&_nc_ht=scontent.fbog10-1.fna&_nc_gid=sXeYt-LDYvn-GfnPzZXJ_g&oh=00_AfL19NBkBkLIY_oBFu-6bjSyVaxjkx2PnLtfzkXjqZ9njg&oe=682484E9" alt="Logo Empresa">
+                    <span>Barbería Moderna</span>
+                </div>
+                <p class="job-location"><i class="fas fa-map-marker-alt"></i> Chía, Cundinamarca</p>
+                <p class="job-description">Barbero con experiencia en cortes modernos y clásicos para barber shop en centro comercial.</p>
+                <div class="job-tags">
+                    <span>Tiempo completo</span>
+                    <span>Experiencia: 2+ años</span>
+                </div>
+                <a href="#" class="job-apply">Ver detalles</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>¿Listo para impulsar tu carrera?</h2>
+            <p>Únete a BeautyConnect y accede a las mejores oportunidades en el sector de la belleza en Chía.</p>
+            <a href="registro.html" class="cta-button">Crear cuenta gratis</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <div class="logo">BeautyConnect</div>
+                <p>Conectando talento y oportunidades en el mundo de la belleza.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Enlaces rápidos</h4>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="ofertas.html">Ofertas</a></li>
+                    <li><a href="profesionales.html">Profesionales</a></li>
+                    <li><a href="#">Sobre nosotros</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contacto</h4>
+                <p><i class="fas fa-map-marker-alt"></i> Chía, Cundinamarca, Colombia</p>
+                <p><i class="fas fa-envelope"></i> info@beautyconnect.co</p>
+                <p><i class="fas fa-phone"></i> +57 300 123 4567</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 BeautyConnect. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>
+<script src="js/app.js"></script>

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Oferta de Empleo - BeautyConnect</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">BeautyConnect</div>
+            <ul class="nav-links">
+                <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+                <li><a href="ofertas.html"><i class="fas fa-briefcase"></i> Ofertas</a></li>
+                <li><a href="profesionales.html"><i class="fas fa-user-friends"></i> Profesionales</a></li>
+                <li class="login-item"><a href="login.html"><i class="fas fa-sign-in-alt"></i> Iniciar sesión</a></li>
+                <li class="user-menu" style="display: none;">
+                    <div class="user-avatar">
+                        <img src="https://via.placeholder.com/30" alt="Avatar" id="navAvatar">
+                        <span id="navUsername">Usuario</span>
+                    </div>
+                    <div class="dropdown-menu">
+                        <a href="#" id="profileLink"><i class="fas fa-user"></i> Mi Perfil</a>
+                        <a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <section class="page-header">
+        <h1>Crear Oferta de Empleo</h1>
+        <p>Publica una nueva oferta para encontrar profesionales de belleza en Chía</p>
+    </section>
+
+    <section class="form-container">
+        <div class="form-card">
+            <div class="form-header">
+                <h2><i class="fas fa-plus-circle"></i> Nueva Oferta</h2>
+                <p>Completa todos los campos para publicar tu oferta</p>
+            </div>
+
+            <form id="createJobForm">
+                <div class="form-section">
+                    <h3>Información básica</h3>
+                    
+                    <div class="form-group">
+                        <label>Título de la oferta *</label>
+                        <input type="text" placeholder="Ej: Estilista con experiencia en color" required>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Categoría *</label>
+                            <select required>
+                                <option value="" disabled selected>Selecciona una categoría</option>
+                                <option value="estilista">Estilista</option>
+                                <option value="barbero">Barbero</option>
+                                <option value="manicurista">Manicurista</option>
+                                <option value="maquillador">Maquillador/a</option>
+                                <option value="esteticista">Esteticista</option>
+                                <option value="masajista">Masajista</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Experiencia requerida *</label>
+                            <select required>
+                                <option value="" disabled selected>Selecciona nivel</option>
+                                <option value="sin_experiencia">Sin experiencia</option>
+                                <option value="1_ano">Al menos 1 año</option>
+                                <option value="2_anos">Al menos 2 años</option>
+                                <option value="3_anos">Al menos 3 años</option>
+                                <option value="5_anos">Al menos 5 años</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>Detalles del empleo</h3>
+                    
+                    <div class="form-group">
+                        <label>Descripción de la oferta *</label>
+                        <textarea rows="6" placeholder="Detalla las responsabilidades y requisitos del puesto..." required></textarea>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Tipo de jornada *</label>
+                            <select required>
+                                <option value="" disabled selected>Selecciona tipo</option>
+                                <option value="tiempo_completo">Tiempo completo</option>
+                                <option value="medio_tiempo">Medio tiempo</option>
+                                <option value="por_horas">Por horas</option>
+                                <option value="freelance">Freelance</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Horario de trabajo</label>
+                            <input type="text" placeholder="Ej: Lunes a viernes de 9am a 6pm">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Salario (rango) *</label>
+                            <div class="salary-inputs">
+                                <input type="number" placeholder="Mínimo" required>
+                                <span>a</span>
+                                <input type="number" placeholder="Máximo" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Moneda *</label>
+                            <select required>
+                                <option value="COP" selected>Pesos Colombianos (COP)</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Beneficios adicionales</label>
+                        <div class="benefits-checkboxes">
+                            <label class="checkbox-container">
+                                <input type="checkbox" value="comisiones">
+                                <span>Comisiones</span>
+                            </label>
+                            <label class="checkbox-container">
+                                <input type="checkbox" value="propinas">
+                                <span>Propinas</span>
+                            </label>
+                            <label class="checkbox-container">
+                                <input type="checkbox" value="seguro_salud">
+                                <span>Seguro de salud</span>
+                            </label>
+                            <label class="checkbox-container">
+                                <input type="checkbox" value="capacitacion">
+                                <span>Capacitación</span>
+                            </label>
+                            <label class="checkbox-container">
+                                <input type="checkbox" value="alimentacion">
+                                <span>Alimentación</span>
+                            </label>
+                            <label class="checkbox-container">
+                                <input type="checkbox" value="transporte">
+                                <span>Auxilio de transporte</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>Ubicación</h3>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Ciudad *</label>
+                            <input type="text" value="Chía, Cundinamarca" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label>Zona *</label>
+                            <select required>
+                                <option value="" disabled selected>Selecciona zona</option>
+                                <option value="centro">Centro</option>
+                                <option value="norte">Norte</option>
+                                <option value="sur">Sur</option>
+                                <option value="cc_fontanar">C.C. Fontanar</option>
+                                <option value="cc_centro_chia">C.C. Centro Chía</option>
+                                <option value="otra">Otra zona</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Dirección (opcional)</label>
+                        <input type="text" placeholder="Ej: Calle 10 # 15-25">
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>Información de contacto</h3>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Persona de contacto *</label>
+                            <input type="text" placeholder="Nombre completo" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Correo electrónico *</label>
+                            <input type="email" placeholder="email@ejemplo.com" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Teléfono *</label>
+                            <input type="tel" placeholder="Ej: 300 123 4567" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Método de contacto preferido *</label>
+                            <select required>
+                                <option value="" disabled selected>Selecciona método</option>
+                                <option value="email">Correo electrónico</option>
+                                <option value="telefono">Teléfono</option>
+                                <option value="whatsapp">WhatsApp</option>
+                                <option value="plataforma">A través de la plataforma</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-action">
+                    <button type="button" class="secondary-button"><i class="fas fa-save"></i> Guardar borrador</button>
+                    <button type="submit" class="primary-button"><i class="fas fa-paper-plane"></i> Publicar oferta</button>
+                </div>
+            </form>
+        </div>
+        
+        <div class="form-sidebar">
+            <div class="sidebar-card">
+                <h3><i class="fas fa-lightbulb"></i> Consejos</h3>
+                <ul class="tips-list">
+                    <li>Sé específico sobre los requisitos y habilidades necesarias.</li>
+                    <li>Proporciona información clara sobre el salario y beneficios.</li>
+                    <li>Detalla las responsabilidades y tareas del puesto.</li>
+                    <li>Incluye información sobre el ambiente laboral.</li>
+                    <li>Revisa la oferta antes de publicarla para asegurarte de que no tiene errores.</li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-card">
+                <h3><i class="fas fa-rocket"></i> Aumenta la visibilidad</h3>
+                <p>Destaca tu oferta entre las demás con nuestras opciones premium.</p>
+                <a href="#" class="premium-link">Ver planes premium</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <div class="logo">BeautyConnect</div>
+                <p>Conectando talento y oportunidades en el mundo de la belleza.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Enlaces rápidos</h4>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="ofertas.html">Ofertas</a></li>
+                    <li><a href="profesionales.html">Profesionales</a></li>
+                    <li><a href="#">Sobre nosotros</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contacto</h4>
+                <p><i class="fas fa-map-marker-alt"></i> Chía, Cundinamarca, Colombia</p>
+                <p><i class="fas fa-envelope"></i> info@beautyconnect.co</p>
+                <p><i class="fas fa-phone"></i> +57 300 123 4567</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 BeautyConnect. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/ofertas.js"></script>
+</body>
+</html>
+<script src="js/app.js"></script>

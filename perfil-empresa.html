@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil de Empresa - BeautyConnect</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">BeautyConnect</div>
+            <ul class="nav-links">
+                <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+                <li><a href="ofertas.html"><i class="fas fa-briefcase"></i> Ofertas</a></li>
+                <li><a href="profesionales.html"><i class="fas fa-user-friends"></i> Profesionales</a></li>
+                <li class="login-item"><a href="login.html"><i class="fas fa-sign-in-alt"></i> Iniciar sesión</a></li>
+                <li class="user-menu" style="display: none;">
+                    <div class="user-avatar">
+                        <img src="https://via.placeholder.com/30" alt="Avatar" id="navAvatar">
+                        <span id="navUsername">Usuario</span>
+                    </div>
+                    <div class="dropdown-menu">
+                        <a href="#" id="profileLink"><i class="fas fa-user"></i> Mi Perfil</a>
+                        <a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <section class="company-profile-container">
+        <div class="company-profile-header">
+            <div class="company-cover">
+                <img src="https://scontent.fbog11-1.fna.fbcdn.net/v/t39.30808-6/453047778_445213115158407_8755861624346383235_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=LRt4oMZi7dEQ7kNvwFQdmjm&_nc_oc=AdlRf2-F9clpNx8QgFyvetG4RUWP3edGO7vIeocY8b9Ovgmb4cybp2C0LkXOYPk7VWU&_nc_zt=23&_nc_ht=scontent.fbog11-1.fna&_nc_gid=miIxp7ZTIgVdZLG6SnEQRA&oh=00_AfLIpKoTCZz6WNUR_BH_iUIQ6qEEFhgLVFTDO7ydDRaoyg&oe=68246092" alt="Portada Aldany Spa">
+            </div>
+            
+            <div class="company-main-info">
+                <div class="company-logo">
+                    <img src="https://via.placeholder.com/150" alt="Logo Belleza Total">
+                </div>
+                
+                <div class="company-info">
+                    <h1>Aldany Spa</h1>
+                    <p class="company-category">Salón de belleza</p>
+                    <p class="company-location"><i class="fas fa-map-marker-alt"></i> Bojaca, Chía, Cundinamarca</p>
+                    
+                    <div class="company-stats">
+                        <div class="stat">
+                            <span class="stat-value">9</span>
+                            <span class="stat-label">Años en el mercado</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">10</span>
+                            <span class="stat-label">Profesionales</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">4.8</span>
+                            <span class="stat-label">Calificación</span>
+                        </div>
+                    </div>
+                    
+                    <div class="company-actions">
+                        <a href="#" class="primary-button" id="contactBtn"><i class="fas fa-envelope"></i> Contactar</a>
+                        <a href="ofertas.html?empresa=1" class="secondary-button"><i class="fas fa-briefcase"></i> Ver ofertas</a>
+                        <a href="#" class="icon-button"><i class="fas fa-share-alt"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="company-profile-content">
+            <div class="company-main-content">
+                <section class="company-section">
+                    <h2>Acerca de nosotros</h2>
+                    <p>Somos un salón de belleza integral ubicado en  Chía, con más de 5 años de experiencia en el mercado. En Belleza Total ofrecemos servicios completos de belleza, desde corte y color hasta tratamientos capilares avanzados, manicura, pedicura y estética facial.</p>
+                    <p>Contamos con un equipo de profesionales altamente capacitados y en constante actualización de técnicas y tendencias. Nuestro objetivo es brindar a cada cliente una experiencia personalizada, utilizando productos de alta calidad y las técnicas más innovadoras del mercado.</p>
+                    <p>Nos distinguimos por nuestra atención al detalle, ambiente acogedor y el compromiso con la satisfacción de nuestros clientes.</p>
+                </section>
+                
+                <section class="company-section">
+                    <h2>Servicios que ofrecemos</h2>
+                    <div class="services-grid">
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-cut"></i>
+                            </div>
+                            <h3>Corte y peinado</h3>
+                            <p>Cortes personalizados para damas, caballeros y niños. Peinados para toda ocasión.</p>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-palette"></i>
+                            </div>
+                            <h3>Coloración</h3>
+                            <p>Tintes, mechas, balayage, degradados y técnicas avanzadas de color.</p>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-leaf"></i>
+                            </div>
+                            <h3>Tratamientos capilares</h3>
+                            <p>Hidratación, reconstrucción, tratamientos anti-caída y medicina capilar.</p>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-hand-sparkles"></i>
+                            </div>
+                            <h3>Manicura y pedicura</h3>
+                            <p>Servicios básicos y avanzados, semipermanente, acrílicas y nail art.</p>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-spa"></i>
+                            </div>
+                            <h3>Estética facial</h3>
+                            <p>Limpiezas, mascarillas, tratamientos anti-edad y servicios de maquillaje.</p>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <h3>Depilación</h3>
+                            <p>Servicios de depilación con cera y depilación láser para diversas zonas.</p>
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="company-section">
+                    <h2>Nuestro equipo</h2>
+                    <div class="team-grid">
+                        <div class="team-member">
+                            <div class="member-photo">
+                                <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?q=80&w=300" alt="María Fernández">
+                            </div>
+                            <h3>María Fernández</h3>
+                            <p class="member-position">Estilista Senior</p>
+                            <p class="member-description">Especialista en color y corte con más de 10 años de experiencia.</p>
+                            <a href="perfil-profesional.html?id=1" class="member-link">Ver perfil</a>
+                        </div>
+                        <div class="team-member">
+                            <div class="member-photo">
+                                <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?q=80&w=300" alt="Sofía López">
+                            </div>
+                            <h3>Sofía López</h3>
+                            <p class="member-position">Especialista en Uñas</p>
+                            <p class="member-description">Artista de nail art con experiencia en técnicas innovadoras.</p>
+                            <a href="perfil-profesional.html?id=3" class="member-link">Ver perfil</a>
+                        </div>
+                        <div class="team-member">
+                            <div class="member-photo">
+                                <img src="https://images.unsplash.com/photo-1582095133179-bfd08e2fc6b3?q=80&w=300" alt="Valeria Gómez">
+                            </div>
+                            <h3>Valeria Gómez</h3>
+                            <p class="member-position">Esteticista</p>
+                            <p class="member-description">Experta en tratamientos faciales y corporales.</p>
+                            <a href="perfil-profesional.html?id=6" class="member-link">Ver perfil</a>
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="company-section">
+                    <h2>Galería</h2>
+                    <div class="gallery-grid">
+                        <div class="gallery-item">
+                            <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=500&auto=format&fit=crop&q=60" alt="Instalaciones 1">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?w=500&auto=format&fit=crop&q=60" alt="Instalaciones 2">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="https://images.unsplash.com/photo-1470259078422-826894b933aa?w=500&auto=format&fit=crop&q=60" alt="Instalaciones 3">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="https://images.unsplash.com/photo-1532710093739-9470acff878f?w=500&auto=format&fit=crop&q=60" alt="Trabajo 1">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="https://images.unsplash.com/photo-1487412912498-0447579c8d4d?w=500&auto=format&fit=crop&q=60" alt="Trabajo 2">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="https://images.unsplash.com/photo-1525616332049-3370cb555c6b?w=500&auto=format&fit=crop&q=60" alt="Trabajo 3">
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="company-section">
+                    <h2>Reseñas de clientes</h2>
+                    <div class="reviews-list">
+                        <div class="review-item">
+                            <div class="review-header">
+                                <div class="reviewer-avatar">
+                                    <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Carla Ruiz">
+                                </div>
+                                <div class="reviewer-info">
+                                    <h4>Carla Ruiz</h4>
+                                    <div class="review-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="review-text">"Excelente servicio. María ha sido mi estilista por años y siempre quedo satisfecha con los resultados. El ambiente es agradable y la atención es impecable."</p>
+                            <p class="review-date">Hace 2 semanas</p>
+                        </div>
+                        
+                        <div class="review-item">
+                            <div class="review-header">
+                                <div class="reviewer-avatar">
+                                    <img src="https://randomuser.me/api/portraits/men/41.jpg" alt="Andrés Vargas">
+                                </div>
+                                <div class="reviewer-info">
+                                    <h4>Andrés Vargas</h4>
+                                    <div class="review-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="review-text">"Muy buen servicio de barbería, aunque a veces hay que esperar un poco. El resultado siempre es profesional y el personal muy amable."</p>
+                            <p class="review-date">Hace 1 mes</p>
+                        </div>
+                        
+                        <div class="review-item">
+                            <div class="review-header">
+                                <div class="reviewer-avatar">
+                                    <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Laura Mendoza">
+                                </div>
+                                <div class="reviewer-info">
+                                    <h4>Laura Mendoza</h4>
+                                    <div class="review-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="review-text">"El mejor servicio de manicura que he probado en Chía. Sofía es una artista con las uñas y sus diseños son hermosos y duraderos."</p>
+                            <p class="review-date">Hace 2 meses</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            
+            <div class="company-sidebar">
+                <div class="sidebar-card">
+                    <h3>Información de contacto</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> Calle 30 #1 b-12, Bojaca, Chía</li>
+                        <li><i class="fas fa-phone"></i> +57 311 469 8447</li>
+                        <li><i class="fas fa-envelope"></i> aldanypeluqueria@gmail.com</li>
+                    </ul>
+                </div>
+                
+                <div class="sidebar-card">
+                    <h3>Horario de atención</h3>
+                    <ul class="schedule-list">
+                        <li>
+                            <span class="day">Lunes - Viernes:</span>
+                            <span class="hours">9:00 AM - 8:00 PM</span>
+                        </li>
+                        <li>
+                            <span class="day">Sábados:</span>
+                            <span class="hours">9:00 AM - 6:00 PM</span>
+                        </li>
+                        <li>
+                            <span class="day">Festivos y Domingos:</span>
+                            <span class="hours">Cerrado</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="sidebar-card">
+                    <h3>Ofertas de empleo</h3>
+                    <div class="job-mini-list">
+                        <div class="job-mini-item">
+                            <h4>Estilista Senior</h4>
+                            <p><i class="fas fa-clock"></i> Tiempo completo</p>
+                            <a href="detalle-oferta.html?id=1" class="view-job">Ver detalles</a>
+                        </div>
+                        <div class="job-mini-item">
+                            <h4>Auxiliar de Peluquería</h4>
+                            <p><i class="fas fa-clock"></i> Tiempo completo</p>
+                            <a href="detalle-oferta.html?id=6" class="view-job">Ver detalles</a>
+                        </div>
+                    </div>
+                    <a href="ofertas.html?empresa=1" class="view-all-jobs">Ver todas las ofertas</a>
+                </div>
+                
+                <div class="sidebar-card">
+                    <h3>Ubicación</h3>
+                    <div class="location-map">
+                        <img src="https://via.placeholder.com/300x200?text=Mapa+de+Ubicación" alt="Mapa">
+                    </div>
+                    <a href="https://maps.google.com" class="directions-link" target="_blank">Cómo llegar <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                
+                <div class="sidebar-card">
+                    <h3>Redes sociales</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal para contactar empresa -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h2>Contactar Aldany Spa</h2>
+            <p>Completa el formulario para enviar un mensaje</p>
+            
+            <form id="contactForm">
+                <div class="form-group">
+                    <label>Nombre completo</label>
+                    <input type="text" required>
+                </div>
+                <div class="form-group">
+                    <label>Correo electrónico</label>
+                    <input type="email" required>
+                </div>
+                <div class="form-group">
+                    <label>Teléfono</label>
+                    <input type="tel" required>
+                </div>
+                <div class="form-group">
+                    <label>Asunto</label>
+                    <select required>
+                        <option value="" disabled selected>Selecciona una opción</option>
+                        <option value="trabajo">Información laboral</option>
+                        <option value="servicios">Información de servicios</option>
+                        <option value="cita">Solicitud de cita</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Mensaje</label>
+                    <textarea rows="4" placeholder="Escribe tu mensaje..." required></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="checkbox-container">
+                        <input type="checkbox" required>
+                        <span>Acepto que BeautyConnect procese mis datos según la política de privacidad</span>
+                    </label>
+                </div>
+                <button type="submit" class="modal-button">Enviar mensaje</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <div class="logo">BeautyConnect</div>
+                <p>Conectando talento y oportunidades en el mundo de la belleza.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Enlaces rápidos</h4>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="ofertas.html">Ofertas</a></li>
+                    <li><a href="profesionales.html">Profesionales</a></li>
+                    <li><a href="#">Sobre nosotros</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contacto</h4>
+                <p><i class="fas fa-map-marker-alt"></i> Chía, Cundinamarca, Colombia</p>
+                <p><i class="fas fa-envelope"></i> info@beautyconnect.co</p>
+                <p><i class="fas fa-phone"></i> +57 300 123 4567</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 BeautyConnect. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>
+<script src="js/app.js"></script>

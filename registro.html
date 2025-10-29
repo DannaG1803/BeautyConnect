@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - BeautyConnect</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">BeautyConnect</div>
+            <ul class="nav-links">
+                <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+                <li><a href="ofertas.html"><i class="fas fa-briefcase"></i> Ofertas</a></li>
+                <li><a href="profesionales.html"><i class="fas fa-user-friends"></i> Profesionales</a></li>
+                <li class="login-item"><a href="login.html"><i class="fas fa-sign-in-alt"></i> Iniciar sesión</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <section class="auth-container">
+        <div class="auth-box register-box">
+            <h2>Crear una cuenta</h2>
+            <div class="auth-tabs">
+                <button class="auth-tab active" data-tab="professional">Profesional</button>
+                <button class="auth-tab" data-tab="business">Empresa</button>
+            </div>
+            
+            <!-- Formulario para profesionales -->
+            <form id="professionalForm" class="tab-content active">
+                <div class="input-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" placeholder="Nombre completo" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" placeholder="Correo electrónico" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-phone"></i>
+                    <input type="tel" placeholder="Número de teléfono" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Contraseña" required>
+                    <i class="fas fa-eye toggle-password"></i>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Confirmar contraseña" required>
+                    <i class="fas fa-eye toggle-password"></i>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-briefcase"></i>
+                    <select required>
+                        <option value="" disabled selected>Especialidad principal</option>
+                        <option value="estilista">Estilista</option>
+                        <option value="barbero">Barbero</option>
+                        <option value="manicurista">Manicurista</option>
+                        <option value="maquillador">Maquillador/a</option>
+                        <option value="esteticista">Esteticista</option>
+                        <option value="masajista">Masajista</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <input type="text" placeholder="Ubicación" value="Chía, Cundinamarca" readonly>
+                </div>
+                <div class="terms-checkbox">
+                    <label>
+                        <input type="checkbox" required>
+                        <span>Acepto los <a href="#">términos y condiciones</a> y la <a href="#">política de privacidad</a></span>
+                    </label>
+                </div>
+                <button type="submit" class="auth-button">Registrarme como profesional</button>
+            </form>
+            
+            <!-- Formulario para empresas -->
+            <form id="businessForm" class="tab-content">
+                <div class="input-group">
+                    <i class="fas fa-building"></i>
+                    <input type="text" placeholder="Nombre del establecimiento" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-id-card"></i>
+                    <input type="text" placeholder="NIT" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" placeholder="Nombre del representante" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" placeholder="Correo electrónico" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-phone"></i>
+                    <input type="tel" placeholder="Número de teléfono" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Contraseña" required>
+                    <i class="fas fa-eye toggle-password"></i>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Confirmar contraseña" required>
+                    <i class="fas fa-eye toggle-password"></i>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-store"></i>
+                    <select required>
+                        <option value="" disabled selected>Tipo de establecimiento</option>
+                        <option value="salon">Salón de belleza</option>
+                        <option value="barberia">Barbería</option>
+                        <option value="spa">Spa</option>
+                        <option value="salon_unas">Salón de uñas</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <input type="text" placeholder="Dirección" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <input type="text" placeholder="Ubicación" value="Chía, Cundinamarca" readonly>
+                </div>
+                <div class="terms-checkbox">
+                    <label>
+                        <input type="checkbox" required>
+                        <span>Acepto los <a href="#">términos y condiciones</a> y la <a href="#">política de privacidad</a></span>
+                    </label>
+                </div>
+                <button type="submit" class="auth-button">Registrarme como empresa</button>
+            </form>
+            
+            <div class="auth-footer">
+                <p>¿Ya tienes una cuenta? <a href="login.html">Inicia sesión aquí</a></p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <div class="logo">BeautyConnect</div>
+                <p>Conectando talento y oportunidades en el mundo de la belleza.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Enlaces rápidos</h4>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="ofertas.html">Ofertas</a></li>
+                    <li><a href="profesionales.html">Profesionales</a></li>
+                    <li><a href="#">Sobre nosotros</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contacto</h4>
+                <p><i class="fas fa-map-marker-alt"></i> Chía, Cundinamarca, Colombia</p>
+                <p><i class="fas fa-envelope"></i> info@beautyconnect.co</p>
+                <p><i class="fas fa-phone"></i> +57 300 123 4567</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 BeautyConnect. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>
+<script src="js/app.js"></script>

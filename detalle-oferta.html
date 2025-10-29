@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estilista Senior - Belleza Total | BeautyConnect</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Estilos específicos para la página de detalle de oferta */
+        .job-detail-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+        
+        .job-detail-header {
+            background-color: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        
+        .job-banner {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: #ff69b4;
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 0 12px 0 12px;
+            font-weight: 600;
+            font-size: 0.875rem;
+        }
+        
+        .job-company-info {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .company-logo {
+            width: 100px;
+            height: 100px;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .company-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .company-details h2 {
+            margin-bottom: 0.25rem;
+        }
+        
+        .company-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 0.5rem;
+        }
+        
+        .company-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #666;
+            font-size: 0.875rem;
+        }
+        
+        .job-highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+        }
+        
+        .highlight-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .highlight-item i {
+            font-size: 2rem;
+            color: #ff69b4;
+            margin-bottom: 1rem;
+        }
+        
+        .highlight-item h4 {
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+        
+        .highlight-item p {
+            color: #666;
+            font-size: 0.875rem;
+        }
+        
+        .job-actions {
+            display: flex;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .job-content {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .job-main-content {
+            flex: 2;
+        }
+        
+        .job-sidebar {
+            flex: 1;
+        }
+        
+        .job-section {
+            background-color: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .job-section h3 {
+            margin-bottom: 1.5rem;
+            font-size: 1.25rem;
+            color: #333;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 0.75rem;
+        }
+        
+        .job-section p {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        
+        .requirements-list, 
+        .benefits-list {
+            padding-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .requirements-list li, 
+        .benefits-list li {
+            margin-bottom: 0.75rem;
+            position: relative;
+            padding-left: 0.5rem;
+        }
+        
+        .requirements-list li::before, 
+        .benefits-list li::before {
+            content: "•";
+            position: absolute;
+            left: -1rem;
+            color: #ff69b4;
+            font-weight: bold;
+        }
+        
+        .benefits-list li::before {
+            content: "✓";
+            color: #32cd32;
+        }
+        
+        .sidebar-card {
+            background-color: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .sidebar-card h4 {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            color: #333;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 0.75rem;
+        }
+        
+        .job-summary {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        
+        .summary-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+        
+        .summary-item i {
+            color: #ff69b4;
+            margin-top: 0.25rem;
+            width: 20px;
+            text-align: center;
+        }
+        
+        .summary-item div {
+            flex: 1;
+        }
+        
+        .summary-item div strong {
+            display: block;
+            margin-bottom: 0.25rem;
+            font-size: 0.9rem;
+        }
+        
+        .summary-item div span {
+            color: #666;
+            font-size: 0.875rem;
+        }
+        
+        .similar-jobs {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .similar-job-item {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            transition: background-color 0.2s ease;
+        }
+        
+        .similar-job-item:hover {
+            background-color: #f0f0f0;
+        }
+        
+        .similar-job-logo {
+            width: 50px;
+            height: 50px;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-right: 1rem;
+        }
+        
+        .similar-job-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .similar-job-info {
+            flex: 1;
+        }
+        
+        .similar-job-info h5 {
+            margin-bottom: 0.25rem;
+            font-size: 0.9rem;
+        }
+        
+        .similar-job-info p {
+            color: #666;
+            font-size: 0.8rem;
+            margin-bottom: 0;
+        }
+        
+        .share-buttons {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+        
+        .share-button {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f0f0f0;
+            color: #666;
+            transition: all 0.2s ease;
+        }
+        
+        .share-button:hover {
+            background-color: #ff69b4;
+            color: white;
+        }
+        
+        @media (max-width: 1024px) {
+            .job-content {
+                flex-direction: column;
+            }
+            
+            .job-main-content {
+                order: 2;
+            }
+            
+            .job-sidebar {
+                order: 1;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .job-company-info {
+                flex-direction: column;
+                align-items: flex-start;
+                text-align: center;
+            }
+            
+            .company-logo {
+                margin: 0 auto 1rem;
+            }
+            
+            .company-details {
+                text-align: center;
+                width: 100%;
+            }
+            
+            .company-meta {
+                justify-content: center;
+            }
+            
+            .job-highlights {
+                grid-template-columns: 1fr;
+            }
+            
+            .job-actions {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">BeautyConnect</div>
+            <ul class="nav-links">
+                <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+                <li><a href="ofertas.html" class="active"><i class="fas fa-briefcase"></i> Ofertas</a></li>
+                <li><a href="profesionales.html"><i class="fas fa-user-friends"></i> Profesionales</a></li>
+                <li class="login-item"><a href="login.html"><i class="fas fa-sign-in-alt"></i> Iniciar sesión</a></li>
+                <li class="user-menu" style="display: none;">
+                    <div class="user-avatar">
+                        <img src="https://via.placeholder.com/30" alt="Avatar" id="navAvatar">
+                        <span id="navUsername">Usuario</span>
+                    </div>
+                    <div class="dropdown-menu">
+                        <a href="#" id="profileLink"><i class="fas fa-user"></i> Mi Perfil</a>
+                        <a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <div class="breadcrumbs">
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="ofertas.html">Ofertas</a></li>
+                <li>Estilista - Aldany Spa</li>
+            </ul>
+        </div>
+    </div>
+
+    <section class="job-detail-container">
+        <div class="job-detail-header">
+            <div class="job-banner">Publicado hace 2 días</div>
+            
+            <div class="job-company-info">
+                <div class="company-logo">
+                    <img src="https://scontent.fbog11-1.fna.fbcdn.net/v/t39.30808-6/453047778_445213115158407_8755861624346383235_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=LRt4oMZi7dEQ7kNvwFQdmjm&_nc_oc=AdlRf2-F9clpNx8QgFyvetG4RUWP3edGO7vIeocY8b9Ovgmb4cybp2C0LkXOYPk7VWU&_nc_zt=23&_nc_ht=scontent.fbog11-1.fna&_nc_gid=miIxp7ZTIgVdZLG6SnEQRA&oh=00_AfLIpKoTCZz6WNUR_BH_iUIQ6qEEFhgLVFTDO7ydDRaoyg&oe=68246092" alt="Logo Aldany Spa">
+                </div>
+                
+                <div class="company-details">
+                    <span class="job-category">Estilismo</span>
+                    <h2>Estilista </h2>
+                    <h3>Salón Aldany Spa</h3>
+                    
+                    <div class="company-meta">
+                        <span><i class="fas fa-map-marker-alt"></i> Bojaca, Chía, Cundinamarca</span>
+                        <span><i class="fas fa-clock"></i> Tiempo completo</span>
+                        <span><i class="fas fa-money-bill-wave"></i> $1.200.000 - $1.800.000</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="job-highlights">
+                <div class="highlight-item">
+                    <i class="fas fa-briefcase"></i>
+                    <h4>Experiencia</h4>
+                    <p>2+ años en salones de belleza</p>
+                </div>
+                <div class="highlight-item">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h4>Nivel educativo</h4>
+                    <p>Técnico en estilismo</p>
+                </div>
+                <div class="highlight-item">
+                    <i class="fas fa-clock"></i>
+                    <h4>Jornada laboral</h4>
+                    <p>Lunes a sábado (48 h/sem)</p>
+                </div>
+                <div class="highlight-item">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h4>Contrato</h4>
+                    <p>Indefinido con periodo de prueba</p>
+                </div>
+            </div>
+            
+            <div class="job-actions">
+                <a href="#" class="primary-button" id="applyNowBtn"><i class="fas fa-paper-plane"></i> Aplicar ahora</a>
+                <a href="#" class="secondary-button" id="saveJobBtn"><i class="fas fa-bookmark"></i> Guardar oferta</a>
+                <a href="#" class="icon-button" id="shareJobBtn"><i class="fas fa-share-alt"></i></a>
+            </div>
+        </div>
+        
+        <div class="job-content">
+            <div class="job-main-content">
+                <div class="job-section">
+                    <h3>Descripción de la oferta</h3>
+                    <p>Aldany Spa, ubicado en el centro de Chía, busca un/a estilista senior con experiencia para unirse a nuestro equipo profesional. Buscamos una persona con conocimientos avanzados en técnicas de corte, coloración y tratamientos capilares.</p>
+                    <p>En Belleza Total ofrecemos servicios de alta calidad en un ambiente moderno y dinámico. Contamos con una clientela establecida y un equipo comprometido con la excelencia.</p>
+                </div>
+                <div class="job-section">
+                    <h3>Funciones y responsabilidades</h3>
+                    <ul class="requirements-list">
+                        <li>Realizar servicios de corte de cabello para damas, caballeros y niños.</li>
+                        <li>Aplicar técnicas de coloración, balayage, mechas y tratamientos capilares.</li>
+                        <li>Asesorar a los clientes sobre el estilo y tratamiento más adecuado según su tipo de cabello y facciones.</li>
+                        <li>Realizar peinados para eventos especiales y ocasiones.</li>
+                        <li>Mantener el área de trabajo limpia y ordenada.</li>
+                        <li>Participar en capacitaciones para mantenerse actualizado/a en tendencias y técnicas.</li>
+                    </ul>
+                </div>
+                
+                <div class="job-section">
+                    <h3>Requisitos</h3>
+                    <ul class="requirements-list">
+                        <li>Mínimo 2 años de experiencia comprobable como estilista.</li>
+                        <li>Formación técnica en estilismo o peluquería.</li>
+                        <li>Conocimientos avanzados en técnicas de corte y coloración.</li>
+                        <li>Experiencia en tratamientos capilares.</li>
+                        <li>Habilidades de comunicación y servicio al cliente.</li>
+                        <li>Capacidad para trabajar en equipo y bajo presión.</li>
+                        <li>Disponibilidad para trabajar en horario de centro comercial (incluye domingos y festivos rotativos).</li>
+                    </ul>
+                </div>
+                
+                <div class="job-section">
+                    <h3>Ofrecemos</h3>
+                    <ul class="benefits-list">
+                        <li>Salario competitivo: entre $1.200.000 y $1.800.000 según experiencia y habilidades.</li>
+                        <li>Comisiones por ventas de productos y servicios adicionales.</li>
+                        <li>Contrato laboral con todas las prestaciones de ley.</li>
+                        <li>Seguro de salud complementario después de 6 meses.</li>
+                        <li>Capacitación continua y posibilidades de crecimiento profesional.</li>
+                        <li>Ambiente de trabajo agradable y colaborativo.</li>
+                        <li>Descuentos en productos y servicios del salón.</li>
+                    </ul>
+                </div>
+                
+                <div class="job-section">
+                    <h3>Proceso de selección</h3>
+                    <p>El proceso de selección consta de las siguientes etapas:</p>
+                    <ol>
+                        <li>Revisión de aplicaciones y currículos.</li>
+                        <li>Entrevista telefónica inicial.</li>
+                        <li>Entrevista presencial con el gerente del salón.</li>
+                        <li>Prueba práctica (demostración de técnicas de corte y color).</li>
+                        <li>Entrevista final y oferta.</li>
+                    </ol>
+                    <p>Si estás interesado/a en formar parte de nuestro equipo, aplica a través de esta plataforma o envía tu CV a <strong>aldanypeluqueria@gmail.com</strong> con el asunto "Estilista - Chía".</p>
+                </div>
+                
+                <div class="job-section">
+                    <h3>Sobre la empresa</h3>
+                    <p>Aldany Spa es uno de los salones de belleza líderes en Chía, con más de 9 años de experiencia en el sector. Nos especializamos en servicios de alta calidad en corte, color, tratamientos capilares, manicura, pedicura y estética facial.</p>
+                    <p>Nuestra misión es brindar experiencias de belleza excepcionales, utilizando productos de primera calidad y las técnicas más innovadoras. Valoramos el desarrollo profesional de nuestro equipo y fomentamos un ambiente de trabajo colaborativo y creativo.</p>
+                    <a href="perfil-empresa.html?id=1" class="view-all">Ver perfil completo <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            
+            <div class="job-sidebar">
+                <div class="sidebar-card">
+                    <h4>Resumen de la oferta</h4>
+                    <div class="job-summary">
+                        <div class="summary-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>Ubicación</strong>
+                                <span>Bojaca, Chía, Cundinamarca</span>
+                            </div>
+                        </div>
+                        <div class="summary-item">
+                            <i class="fas fa-building"></i>
+                            <div>
+                                <strong>Empresa</strong>
+                                <span>Aldany Spa</span>
+                            </div>
+                        </div>
+                        <div class="summary-item">
+                            <i class="fas fa-briefcase"></i>
+                            <div>
+                                <strong>Tipo de empleo</strong>
+                                <span>Tiempo completo</span>
+                            </div>
+                        </div>
+                        <div class="summary-item">
+                            <i class="fas fa-money-bill-wave"></i>
+                            <div>
+                                <strong>Salario</strong>
+                                <span>$1.200.000 - $1.800.000 + comisiones</span>
+                            </div>
+                        </div>
+                        <div class="summary-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <strong>Horario</strong>
+                                <span>Lunes a sábado, 9:00 AM - 8:00 PM </span>
+                            </div>
+                        </div>
+                        <div class="summary-item">
+                            <i class="fas fa-calendar-alt"></i>
+                            <div>
+                                <strong>Fecha de publicación</strong>
+                                <span>24 de abril de 2025</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="sidebar-card">
+                    <h4>Contacto</h4>
+                    <div class="job-summary">
+                        <div class="summary-item">
+                            <i class="fas fa-user"></i>
+                            <div>
+                                <strong>Responsable</strong>
+                                <span>Yuri Aldana</span>
+                            </div>
+                        </div>
+                        <div class="summary-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <strong>Email</strong>
+                                <span>aldanypeluqueria@gmail.com</span>
+                            </div>
+                        </div>
+                        <div class="summary-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <strong>Teléfono</strong>
+                                <span>+57 311 469 8447</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="share-buttons">
+                        <a href="#" class="share-button"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="share-button"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="share-button"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="share-button"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="sidebar-card">
+                    <h4>Ofertas similares</h4>
+                    <div class="similar-jobs">
+                        <a href="#" class="similar-job-item">
+                            <div class="similar-job-logo">
+                                <img src="https://via.placeholder.com/50?text=S+" alt="Studio Hair +">
+                            </div>
+                            <div class="similar-job-info">
+                                <h5>Estilista con experiencia en color</h5>
+                                <p>Studio Hair + · Norte, Chía</p>
+                            </div>
+                        </a>
+                        <a href="#" class="similar-job-item">
+                            <div class="similar-job-logo">
+                                <img src="https://via.placeholder.com/50?text=SE" alt="Salón Élite">
+                            </div>
+                            <div class="similar-job-info">
+                                <h5>Estilista para corte y peinado</h5>
+                                <p>Salón Élite · Sur, Chía</p>
+                            </div>
+                        </a>
+                        <a href="#" class="similar-job-item">
+                            <div class="similar-job-logo">
+                                <img src="https://via.placeholder.com/50?text=LS" alt="La Sala">
+                            </div>
+                            <div class="similar-job-info">
+                                <h5>Colorista profesional</h5>
+                                <p>La Sala · Centro Comercial Fontanar, Chía</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Modal para aplicar a oferta -->
+    <div id="applyModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h2>Aplicar a Estilista Senior</h2>
+            <p>Completa el formulario para enviar tu solicitud Aldany Spa</p>
+            
+            <form id="applyForm">
+                <div class="form-group">
+                    <label>Nombre completo *</label>
+                    <input type="text" required>
+                </div>
+                <div class="form-group">
+                    <label>Correo electrónico *</label>
+                    <input type="email" required>
+                </div>
+                <div class="form-group">
+                    <label>Teléfono *</label>
+                    <input type="tel" required>
+                </div>
+                <div class="form-group">
+                    <label>Años de experiencia *</label>
+                    <select required>
+                        <option value="" disabled selected>Selecciona una opción</option>
+                        <option value="1-2">1-2 años</option>
+                        <option value="3-5">3-5 años</option>
+                        <option value="5-10">5-10 años</option>
+                        <option value="10+">Más de 10 años</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>¿Tienes experiencia en técnicas de color? *</label>
+                    <div class="radio-group">
+                        <label>
+                            <input type="radio" name="color_experience" value="yes" required> Sí
+                        </label>
+                        <label>
+                            <input type="radio" name="color_experience" value="no"> No
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>CV/Hoja de vida (PDF) *</label>
+                    <input type="file" accept=".pdf" required>
+                </div>
+                <div class="form-group">
+                    <label>Portafolio o imágenes de trabajos (opcional)</label>
+                    <input type="file" accept=".pdf,.jpg,.jpeg,.png" multiple>
+                </div>
+                <div class="form-group">
+                    <label>Carta de presentación *</label>
+                    <textarea rows="4" placeholder="Cuéntanos por qué eres ideal para este puesto..." required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Disponibilidad para entrevista *</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="availability" value="morning"> Mañanas (9 AM - 12 PM)</label>
+                        <label><input type="checkbox" name="availability" value="afternoon"> Tardes (2 PM - 5 PM)</label>
+                        <label><input type="checkbox" name="availability" value="saturday"> Sábados</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="checkbox-container">
+                        <input type="checkbox" required>
+                        <span>Acepto que BeautyConnect procese mis datos según la <a href="#">política de privacidad</a></span>
+                    </label>
+                </div>
+                <button type="submit" class="modal-button">Enviar solicitud</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <div class="logo">BeautyConnect</div>
+                <p>Conectando talento y oportunidades en el mundo de la belleza.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Enlaces rápidos</h4>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="ofertas.html">Ofertas</a></li>
+                    <li><a href="profesionales.html">Profesionales</a></li>
+                    <li><a href="#">Sobre nosotros</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contacto</h4>
+                <p><i class="fas fa-map-marker-alt"></i> Chía, Cundinamarca, Colombia</p>
+                <p><i class="fas fa-envelope"></i> info@beautyconnect.co</p>
+                <p><i class="fas fa-phone"></i> +57 300 123 4567</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 BeautyConnect. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/ofertas.js"></script>
+    <script>
+        // Script específico para la página de detalle de oferta
+        document.addEventListener('DOMContentLoaded', function() {
+            // Configurar el modal de aplicación
+            const applyNowBtn = document.getElementById('applyNowBtn');
+            const applyModal = document.getElementById('applyModal');
+            const modalClose = document.querySelector('.modal-close');
+            
+            if (applyNowBtn && applyModal) {
+                applyNowBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    applyModal.style.display = 'flex';
+                });
+            }
+            
+            if (modalClose) {
+                modalClose.addEventListener('click', function() {
+                    applyModal.style.display = 'none';
+                });
+            }
+            
+            // Cerrar modal al hacer clic fuera
+            window.addEventListener('click', function(e) {
+                if (e.target === applyModal) {
+                    applyModal.style.display = 'none';
+                }
+            });
+            
+            // Manejar envío del formulario
+            const applyForm = document.getElementById('applyForm');
+            if (applyForm) {
+                applyForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    alert('Solicitud enviada correctamente. La empresa se pondrá en contacto contigo pronto.');
+                    applyModal.style.display = 'none';
+                });
+            }
+            
+            // Configurar botón de guardar oferta
+            const saveJobBtn = document.getElementById('saveJobBtn');
+            if (saveJobBtn) {
+                saveJobBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const isLoggedIn = localStorage.getItem('beautyconnect_user') !== null;
+                    
+                    if (isLoggedIn) {
+                        // Cambiar apariencia del botón
+                        this.innerHTML = '<i class="fas fa-bookmark"></i> Guardado';
+                        this.style.backgroundColor = 'rgba(255, 105, 180, 0.1)';
+                        alert('Oferta guardada en tus favoritos.');
+                    } else {
+                        // Redirigir a login
+                        alert('Debes iniciar sesión para guardar ofertas.');
+                        window.location.href = 'login.html';
+                    }
+                });
+            }
+            
+            // Configurar botón de compartir
+            const shareJobBtn = document.getElementById('shareJobBtn');
+            if (shareJobBtn) {
+                shareJobBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    if (navigator.share) {
+                        navigator.share({
+                            title: 'Oferta de Estilista Senior - BeautyConnect',
+                            text: 'Mira esta oportunidad de empleo como Estilista Senior en Belleza Total',
+                            url: window.location.href,
+                        })
+                        .then(() => console.log('Compartido exitosamente'))
+                        .catch((error) => console.log('Error al compartir', error));
+                    } else {
+                        // Alternativa para navegadores que no soportan Web Share API
+                        prompt('Copia este enlace para compartir la oferta:', window.location.href);
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
+<script src="js/app.js"></script>
